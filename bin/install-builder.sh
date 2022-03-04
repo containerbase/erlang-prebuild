@@ -14,6 +14,7 @@ fi
 
 export DEBIAN_FRONTEND=noninteractive
 
+# https://github.com/erlang/docker-erlang-otp/blob/f337ccc5970a216b598c6d5e29c8ab7d3311fd51/24/slim/Dockerfile#L20-L35
 apt-get update -q
 apt-get install -q -y \
   autoconf \
@@ -25,6 +26,8 @@ apt-get install -q -y \
   git \
   libncurses5-dev \
   libssl-dev \
+  libsctp-dev \
+  unixodbc-dev \
   ;
 
 curl -sSLfo /usr/local/bin/kerl https://raw.githubusercontent.com/kerl/kerl/master/kerl

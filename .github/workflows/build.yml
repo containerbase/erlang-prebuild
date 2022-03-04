@@ -24,7 +24,6 @@ jobs:
     env:
       DISTRO: ${{ matrix.distro }} # build target, name required by binary-builder
       ARCH: ${{ matrix.arch }} # build target, name required by binary-builder
-      LOG_LEVEL: trace
 
     steps:
       - uses: actions/checkout@ec3a7ce113134d7a93b817d10a8272cb61118579 # renovate: tag=v2.4.0
