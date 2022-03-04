@@ -4,6 +4,7 @@
   "packageRules": [
     {
       "matchPackageNames": ["erlang/otp", "erlang"],
+      "matchDatasources": ["github-releases"],
       "extractVersion": "^OTP-(?<version>.+)$"
     }
   ]

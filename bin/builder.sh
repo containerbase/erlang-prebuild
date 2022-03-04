@@ -15,19 +15,26 @@ ARCH=$(uname -p)
 #  BUILD_ARGS="-v"
 #fi
 
-# SEMVER_REGEX="^(0|[1-9][0-9]*)(\.(0|[1-9][0-9]*))?(\.(0|[1-9][0-9]*))?([a-z-].*)?$"
+SEMVER_REGEX="^(0|[1-9][0-9]*)(\.(0|[1-9][0-9]*))?(\.(0|[1-9][0-9]*))?(\.(0|[1-9][0-9]*))?([a-z-].*)?$"
 
-# function check_semver () {
-#   if [[ ! "${1}" =~ ${SEMVER_REGEX} ]]; then
-#     echo Not a semver like version - aborting: "${1}" >&2
-#     exit 1
-#   fi
-#   export MAJOR=${BASH_REMATCH[1]}
-#   export MINOR=${BASH_REMATCH[3]}
-#   export PATCH=${BASH_REMATCH[5]}
-# }
+function check_semver () {
+  if [[ ! "${1}" =~ ${SEMVER_REGEX} ]]; then
+    echo Not a semver like version - aborting: "${1}" >&2
+    exit 1
+  fi
+  MAJOR=${BASH_REMATCH[1]}
+  MINOR=${BASH_REMATCH[3]}
+  PATCH=${BASH_REMATCH[5]}
+  BUILD=${BASH_REMATCH[7]}
+}
 
+check_semver "${VERSION}"
 
+if [[ "$BUILD" -eq 0 ]] && [[ "$PATCH" -eq 0 ]]; then
+  VERSION="${MAJOR}.${MINOR}"
+elif [[ "$BUILD" -eq 0 ]]; then
+  VERSION="${MAJOR}.${MINOR}.${PATCH}"
+fi
 
 echo "Building ${NAME} ${VERSION} for ${CODENAME}"
 kerl build "${VERSION}" "${VERSION}"
