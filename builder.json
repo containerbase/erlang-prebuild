@@ -2,7 +2,7 @@
   "image": "erlang",
   "depName": "erlang",
   "lookupName": "erlang/otp",
-  "datasource": "github-tags",
+  "datasource": "github-releases",
   "versioning": "nuget",
   "startVersion": "22.3.4.24",
   "extractVersion1": "^OTP-(?<version>.+)$",
