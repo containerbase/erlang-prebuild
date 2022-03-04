@@ -5,6 +5,6 @@
   "datasource": "github-tags",
   "versioning": "nuget",
   "startVersion": "22.3.4.24",
-  "extractVersion": "^OTP-(?<version>.+)$",
+  "extractVersion1": "^OTP-(?<version>.+)$",
   "ignoredVersions": []
 }
