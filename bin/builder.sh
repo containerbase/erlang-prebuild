@@ -34,10 +34,10 @@ kerl build "${VERSION}" "${VERSION}"
 
 echo "Installing ${NAME} ${VERSION} for ${CODENAME}"
 kerl install "${VERSION}" "/usr/local/${NAME}/${VERSION}"
-#/usr/local/${NAME}/${VERSION}/bin/php --info
 
-ls -la "/usr/local/${NAME}/${VERSION}"
-
+echo "Testing ${NAME} ${VERSION} for ${CODENAME}"
+ln -sf "/usr/local/${NAME}/${VERSION}/bin/erl" "/usr/local/bin/erl"
+erl -eval 'erlang:display(erlang:system_info(otp_release)), halt().' -noshell
 
 echo "Compressing ${NAME} ${VERSION} for ${CODENAME}-${ARCH}"
 tar -cJf "/cache/${NAME}-${VERSION}-${CODENAME}-${ARCH}.tar.xz" -C "/usr/local/${NAME}" "${VERSION}"

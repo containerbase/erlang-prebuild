@@ -5,6 +5,5 @@
   "versioning": "nuget",
   "startVersion": "22.3.4.24",
   "extractVersion": "OTP-(?<version>.+?)",
-  "versions": ["22.3.4.24"],
   "ignoredVersions": []
 }

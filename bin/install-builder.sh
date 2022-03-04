@@ -32,14 +32,6 @@ chmod +x /usr/local/bin/kerl
 mkdir -p /usr/local/erlang /cache
 
 #--------------------------------
-# fixes
-#--------------------------------
-
-#ARCH=$(uname -p)
-#https://github.com/phpbrew/phpbrew/issues/861#issuecomment-294715448
-#ln -s /usr/include/${ARCH}-linux-gnu/curl /usr/include/curl
-
-#--------------------------------
 # cleanup
 #--------------------------------
 if [[ "${APT_HTTP_PROXY}" ]]; then
