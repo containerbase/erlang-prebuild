@@ -1,11 +1,9 @@
 {
   "image": "erlang",
   "depName": "erlang",
-  "lookupName": "erlang/otp",
-  "datasource": "github-releases",
-  "versioning": "nuget",
+  "datasource": "docker",
+  "versioning": "docker",
   "startVersion": "22.3.4.24",
-  "extractVersion": "^OTP-(?<version>.+)$",
-  "versions": ["22.3.4.24", "23.0", "23.0.1"],
+  "versions": ["22.3.4.24", "23.0.0.0", "23.0.1.0"],
   "ignoredVersions": []
 }
