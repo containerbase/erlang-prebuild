@@ -3,7 +3,7 @@
   "depName": "erlang",
   "lookupName": "erlang/otp",
   "datasource": "github-releases",
-  "versioning": "nuget",
+  "versioning": "loose",
   "startVersion": "22.3.4.24",
   "extractVersion1": "^OTP-(?<version>.+)$",
   "ignoredVersions": []
