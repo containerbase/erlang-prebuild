@@ -1,0 +1,41 @@
+name: build
+
+on:
+  push:
+    branches:
+      - main
+      - 'renovate/**'
+
+  pull_request:
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.event.number || github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    strategy:
+      matrix:
+        distro: [focal, bionic]
+        arch: [x86_64]
+
+    env:
+      DISTRO: ${{ matrix.distro }} # build target, name required by binary-builder
+      ARCH: ${{ matrix.arch }} # build target, name required by binary-builder
+
+    steps:
+      - uses: actions/checkout@ec3a7ce113134d7a93b817d10a8272cb61118579 # renovate: tag=v2.4.0
+
+      - name: binary-builder
+        uses: renovatebot/internal-tools@v1.12.0
+        with:
+          command: binary-builder
+          dry-run: ${{github.ref != 'refs/heads/main'}}
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - uses: actions/upload-artifact@82c141cc518b40d92cc801eee768e7aafc9c2fa2 # renovate: tag=v2.3.1
+        with:
+          name: ${{ env.DISTRO }}
+          path: .cache/*.tar.xz
