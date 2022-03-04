@@ -5,6 +5,6 @@
   "datasource": "github-releases",
   "versioning": "loose",
   "startVersion": "22.3.4.24",
-  "extractVersion1": "^OTP-(?<version>.+)$",
+  "extractVersion": "^OTP-(?<version>.+)$",
   "ignoredVersions": []
 }
