@@ -3,6 +3,6 @@
   "depName": "erlang",
   "datasource": "docker",
   "versioning": "docker",
-  "startVersion": "22.3.2",
+  "startVersion": "22.3.2.0",
   "ignoredVersions": []
 }
