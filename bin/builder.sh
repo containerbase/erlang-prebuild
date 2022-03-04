@@ -30,14 +30,16 @@ function check_semver () {
 
 check_semver "${VERSION}"
 
+KERL_VERSION=$VERSION
+
 if [[ "$BUILD" -eq 0 ]] && [[ "$PATCH" -eq 0 ]]; then
-  VERSION="${MAJOR}.${MINOR}"
+  KERL_VERSION="${MAJOR}.${MINOR}"
 elif [[ "$BUILD" -eq 0 ]]; then
-  VERSION="${MAJOR}.${MINOR}.${PATCH}"
+  KERL_VERSION="${MAJOR}.${MINOR}.${PATCH}"
 fi
 
 echo "Building ${NAME} ${VERSION} for ${CODENAME}"
-kerl build "${VERSION}" "${VERSION}"
+kerl build "${KERL_VERSION}" "${VERSION}"
 
 echo "Installing ${NAME} ${VERSION} for ${CODENAME}"
 kerl install "${VERSION}" "/usr/local/${NAME}/${VERSION}"
