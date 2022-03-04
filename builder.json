@@ -1,6 +1,7 @@
 {
   "image": "erlang",
-  "depName": "erlang/otp",
+  "depName": "erlang",
+  "lookupName": "erlang/otp",
   "datasource": "github-tags",
   "versioning": "nuget",
   "startVersion": "22.3.4.24",
