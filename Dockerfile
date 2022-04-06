@@ -6,8 +6,8 @@ ARG DISTRO=focal
 #--------------------------------------
 # base images
 #--------------------------------------
-FROM ubuntu:bionic@sha256:d8ac28b7bec51664c6b71a9dd1d8f788127ff310b8af30820560973bcfc605a0 as build-bionic
-FROM ubuntu:focal@sha256:bea6d19168bbfd6af8d77c2cc3c572114eb5d113e6f422573c93cb605a0e2ffb as build-focal
+FROM ubuntu:bionic@sha256:10225b2327e8c1f9f105ecf5e4a34325b53207da7668cf3d29fe7026efc1b6dc as build-bionic
+FROM ubuntu:focal@sha256:d11cf985a3a0c1f20fa25bada66928d31a40615adf21e1bb8b298497505227c2 as build-focal
 
 
 #--------------------------------------
