@@ -2,7 +2,9 @@
   "image": "erlang",
   "depName": "erlang",
   "datasource": "docker",
-  "versioning": "docker",
-  "startVersion": "22.3.2.0",
-  "ignoredVersions": []
+  "versioning": "pep440",
+  "extractVersion": "^(?<version>\\d+\\.\\d+\\.\\d+\\.\\d+)$",
+  "startVersion": "22.3.4.26",
+  "ignoredVersions": [],
+  "allowedVersions": "~=22.3.4.26, ~=23.3.4.13, >=24.2.0.0"
 }
