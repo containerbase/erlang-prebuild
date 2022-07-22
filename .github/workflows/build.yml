@@ -15,8 +15,11 @@ concurrency:
 jobs:
   build:
     runs-on: ubuntu-latest
+    continue-on-error: ${{ matrix.distro == 'jammy' }}
 
     strategy:
+      # some versions are not builable on jammy
+      fail-fast: false
       matrix:
         distro: [jammy, focal, bionic]
         arch: [x86_64]
