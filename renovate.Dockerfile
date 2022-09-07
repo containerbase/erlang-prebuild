@@ -11,7 +11,7 @@ FROM scratch
 ENV ERLANG_VERSION=22.3.4.26
 
 # renovate: datasource=docker depName=erlang lookupName=erlang versioning=docker
-ENV ERLANG_VERSION=23.3.4.16
+ENV ERLANG_VERSION=23.3.4.17
 
 # renovate: datasource=docker depName=erlang lookupName=erlang versioning=docker
 ENV ERLANG_VERSION=24.2.2.0
