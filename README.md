@@ -1,7 +1,7 @@
+# erlang-prebuild
+
 [![build](https://github.com/containerbase/erlang-prebuild/actions/workflows/build.yml/badge.svg)](https://github.com/containerbase/erlang-prebuild/actions/workflows/build.yml)
 ![version](https://badgen.net/github/release/containerbase/erlang-prebuild)
-
-# erlang-prebuild
 
 containerbase Erlang/OTP releases
 
@@ -25,8 +25,8 @@ docker run --rm -it -v ${PWD}/.cache:/cache -e DEBURG=true builder 3.0.0
 
 Optional environment variables
 
-| Name        | Description                                                            | Default   |
-| ----------- | ---------------------------------------------------------------------- | --------- |
-| `DISTRO`    | Set an ubuntu base distro, `jammy`, `focal` and `bionic` are supported | `focal`   |
-| `APT_PROXY` | Set an APT http proxy for installing build deps                        | `<empty>` |
-| `DEBUG`     | Show verbose php build output                                          | `<empty>` |
+| Name        | Description                                                  | Default   |
+| ----------- | ------------------------------------------------------------ | --------- |
+| `DISTRO`    | Set an ubuntu base distro, `focal` and `jammy` are supported | `focal`   |
+| `APT_PROXY` | Set an APT http proxy for installing build deps              | `<empty>` |
+| `DEBUG`     | Show verbose php build output                                | `<empty>` |
