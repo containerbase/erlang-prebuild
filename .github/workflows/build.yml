@@ -21,8 +21,11 @@ jobs:
       # some versions are not builable on jammy
       fail-fast: false
       matrix:
-        distro: [jammy, focal, bionic]
-        arch: [x86_64]
+        distro:
+          - focal
+          - jammy
+        arch:
+          - x86_64
 
     env:
       DISTRO: ${{ matrix.distro }} # build target, name required by binary-builder
