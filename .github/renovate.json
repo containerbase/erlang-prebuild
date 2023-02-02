@@ -6,6 +6,12 @@
       "matchPackageNames": ["erlang/otp", "erlang"],
       "matchDatasources": ["github-releases"],
       "extractVersion": "^OTP-(?<version>.+)$"
+    },
+    {
+      "description": "Enable minor updates on renovate rebuild trigger file",
+      "matchFiles": ["renovate.Dockerfile"],
+      "matchUpdateTypes": ["minor"],
+      "enabled": true
     }
   ]
 }
