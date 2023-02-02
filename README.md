@@ -4,7 +4,7 @@
 ![GitHub release (latest SemVer)](https://img.shields.io/github/v/release/containerbase/erlang-prebuild)
 ![License: MIT](https://img.shields.io/github/license/containerbase/erlang-prebuild)
 
-Prebuild Erlang/OTP releases used by [containerbase/buildpack](https://github.com/containerbase/buildpack).
+Prebuild Erlang/OTP releases used by [containerbase/base](https://github.com/containerbase/base).
 
 **Note:** `v24.2.0` is first available version for Ubuntu 22.04 (`jammy`).
 
