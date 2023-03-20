@@ -31,12 +31,17 @@ function check_semver () {
 check_semver "${VERSION}"
 
 KERL_VERSION=$VERSION
+KERL_CONFIGURE_DISABLE_APPLICATIONS="debugger jinterface megaco observer odbc wx"
+KERL_CONFIGURE_OPTIONS="--without-cdv --disable-hipe"
+MAKEFLAGS="-j$(($(nproc) + 2))"
 
 if [[ "$BUILD" -eq 0 ]] && [[ "$PATCH" -eq 0 ]]; then
   KERL_VERSION="${MAJOR}.${MINOR}"
 elif [[ "$BUILD" -eq 0 ]]; then
   KERL_VERSION="${MAJOR}.${MINOR}.${PATCH}"
 fi
+
+export KERL_VERSION KERL_CONFIGURE_OPTIONS KERL_CONFIGURE_DISABLE_APPLICATIONS MAKEFLAGS
 
 echo "Building ${NAME} ${VERSION} for ${CODENAME}"
 kerl build "${KERL_VERSION}" "${VERSION}"
@@ -47,6 +52,7 @@ kerl install "${VERSION}" "/usr/local/${NAME}/${VERSION}"
 echo "Testing ${NAME} ${VERSION} for ${CODENAME}"
 ln -sf "/usr/local/${NAME}/${VERSION}/bin/erl" "/usr/local/bin/erl"
 erl -eval 'erlang:display(erlang:system_info(otp_release)), halt().' -noshell
+erl -version
 
 echo "Compressing ${NAME} ${VERSION} for ${CODENAME}-${ARCH}"
 tar -cJf "/cache/${NAME}-${VERSION}-${CODENAME}-${ARCH}.tar.xz" -C "/usr/local/${NAME}" "${VERSION}"
