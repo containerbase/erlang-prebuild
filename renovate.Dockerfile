@@ -8,7 +8,7 @@ FROM scratch
 
 
 # renovate: datasource=docker depName=erlang
-ENV ERLANG_VERSION=22.3.4.26
+ENV ERLANG_VERSION=22.3.4.27
 
 # renovate: datasource=docker depName=erlang
 ENV ERLANG_VERSION=23.3.4.19
