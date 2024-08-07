@@ -8,6 +8,11 @@
       "extractVersion": "^OTP-(?<version>.+)$"
     },
     {
+      "matchDepNames": ["erlang"],
+      "matchDatasources": ["docker"],
+      "versioning": "regex:^(?<major>\\d+)\\.(?<minor>\\d+)\\.(?<patch>\\d+)\\.(?<build>\\d+)$"
+    },
+    {
       "description": "Enable minor updates on renovate rebuild trigger file",
       "matchFiles": ["renovate.Dockerfile"],
       "matchUpdateTypes": ["minor"],

@@ -2,7 +2,7 @@
   "image": "erlang",
   "depName": "erlang",
   "datasource": "docker",
-  "versioning": "docker",
+  "versioning": "regex:^(?<major>\\d+)\\.(?<minor>\\d+)\\.(?<patch>\\d+)\\.(?<build>\\d+)$",
   "startVersion": "22.3.4.27",
   "ignoredVersions": [
     "23.1.0.0",
