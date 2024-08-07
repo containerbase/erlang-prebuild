@@ -3,7 +3,7 @@
   "depName": "erlang",
   "datasource": "docker",
   "versioning": "regex:^(?<major>\\d+)\\.(?<minor>\\d+)\\.(?<patch>\\d+)\\.(?<build>\\d+)$",
-  "startVersion": "22.3.4.27",
+  "startVersion": "22.3.4.28",
   "ignoredVersions": [
     "23.1.0.0",
     "23.1.1.0",
@@ -42,6 +42,7 @@
     "23.3.4.17",
     "23.3.4.18",
     "23.3.4.19",
+    "23.3.4.20",
     "24.0.0.0",
     "24.0.1.0",
     "24.0.2.0",
