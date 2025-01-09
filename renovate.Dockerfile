@@ -20,7 +20,7 @@ ENV ERLANG_VERSION=24.3.4.17
 ENV ERLANG_VERSION=25.3.2.16
 
 # renovate: datasource=docker depName=erlang
-ENV ERLANG_VERSION=26.2.5.2
+ENV ERLANG_VERSION=26.2.5.6
 
 # renovate: datasource=docker depName=erlang
 ENV ERLANG_VERSION=27.1.2.0
