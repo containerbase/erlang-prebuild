@@ -14,7 +14,7 @@
     },
     {
       "description": "Enable minor updates on renovate rebuild trigger file",
-      "matchFiles": ["renovate.Dockerfile"],
+      "matchFileNames": ["renovate.Dockerfile"],
       "matchUpdateTypes": ["minor"],
       "enabled": true
     }
