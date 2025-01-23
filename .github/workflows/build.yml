@@ -31,7 +31,8 @@ jobs:
   build:
     needs:
       - lint
-    runs-on: ubuntu-latest
+    runs-on: ${{ matrix.arch.os }}
+    name: build (${{ matrix.distro }}, ${{ matrix.arch.name }})
     continue-on-error: ${{ matrix.distro == 'jammy' }}
 
     strategy:
@@ -42,12 +43,14 @@ jobs:
           - focal
           - jammy
         arch:
-          - x86_64
-          - aarch64
+          - name: x86_64
+            os: ubuntu-24.04
+          - name: aarch64
+            os: ubuntu-24.04-arm
 
     env:
       DISTRO: ${{ matrix.distro }} # build target, name required by binary-builder
-      ARCH: ${{ matrix.arch }} # build target, name required by binary-builder
+      ARCH: ${{ matrix.arch.name }} # build target, name required by binary-builder
 
     steps:
       - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2
