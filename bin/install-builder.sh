@@ -24,7 +24,7 @@ apt-get install -q -y \
   curl \
   dumb-init \
   git \
-  libncurses5-dev \
+  libncurses-dev \
   libssl-dev \
   libsctp-dev \
   unixodbc-dev \
