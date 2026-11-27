@@ -1,0 +1,30 @@
+{
+  "config": {
+    "extends": "markdownlint/style/prettier",
+    "list-marker-space": {
+      "ul_multi": 1,
+      "ul_single": 1,
+    },
+    "ul-indent": {
+      "indent": 2,
+    },
+
+    // Disable some built-in rules
+    "no-emphasis-as-heading": false,
+    "first-line-heading": false,
+    "line-length": false,
+    "no-emphasis-as-header": false,
+    "no-inline-html": false,
+    "single-h1": false,
+    "no-duplicate-heading": {
+      "siblings_only": true,
+    },
+  },
+
+  // Skip anything git already ignores
+  "gitignore": true,
+
+  // Define glob expressions to ignore, on top of what `.gitignore` covers
+  // `.claude` holds local Claude Code files, nothing in there is tracked
+  "ignores": [".claude/**"],
+}

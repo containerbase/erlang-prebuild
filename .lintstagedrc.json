@@ -1,4 +1,5 @@
 {
   ".github/workflows/*.{yml,yaml}": ["jactionlint", "zizmor --offline"],
-  "*": "oxfmt --no-error-on-unmatched-pattern"
+  "*.md": ["markdownlint-cli2 --fix", "oxfmt --no-error-on-unmatched-pattern"],
+  "!*.md": "oxfmt --no-error-on-unmatched-pattern"
 }
